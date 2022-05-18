@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PSP Samples - iFramed</title>
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <style>
+      body {
+        background-color: #fff;
+      }
+      .container {
+        max-width: 960px;
+      }
+      .pricing-header {
+        max-width: 700px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container py-3">
+      <header>
+        <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+          Examples: Iframe
+        </div>
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+          <h5 class="fs-5 text-muted">The user is logged in (reference = <span id="user_id"></span>)</h5><hr>
+          <h1 class="display-4 fw-normal">Upgrade your plan today</h1>
+          <p class="fs-5 text-muted">This is a simple example linking to iframed PSPs</p>
+        </div>
+      </header>
+      <main>
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Pro</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">$15<small class="text-muted fw-light">/mo</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>20 users included</li>
+                  <li>10 GB of storage</li>
+                  <li>Priority email support</li>
+                  <li>Help center access</li>
+                </ul>
+                <a id="pro_plan_url" href="#">
+                  <button type="button" class="w-100 btn btn-lg btn-primary">Subscribe to Pro</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+  <script>
+      //generate random user_id as an example reference
+      var random_string =  Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+      var user_id = "user_" + random_string;
+      document.getElementById("user_id").innerHTML = user_id;
+      
+      var pro_plan_url = document.getElementById('pro_plan_url')
+      pro_plan_url.href = "subscribe.html?reference=" + user_id;
+
+    </script>
+</html>

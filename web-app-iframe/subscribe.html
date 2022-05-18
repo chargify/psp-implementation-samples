@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PSP Samples - iFramed</title>
+    <!-- Custom styles for this template -->
+    <link href="iframe.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container py-3">
+      <main>
+        <iframe id="iframe_url"></iframe>
+      </main>
+    </div>
+  </body>
+  <script>
+    //simple example of reading user id
+    var url_string = window.location.href; //window.location.href
+    var url = new URL(url_string);
+    var reference = url.searchParams.get("reference");
+    var iframe_url = 'https://chargify-implementation-samples.chargifypay.com/subscribe/fc2v8yjstxdq/pro-iframe?reference' + reference;
+    document.getElementById("iframe_url").src = iframe_url;
+  </script>
+</html>
+              
